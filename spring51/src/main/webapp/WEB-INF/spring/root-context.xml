@@ -9,8 +9,10 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
     <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
-        <property name="driverClassName" value="org.h2.Driver" />
-        <property name="jdbcUrl" value="jdbc:h2:~/test" />
+        <!-- <property name="driverClassName" value="org.h2.Driver" />
+        <property name="jdbcUrl" value="jdbc:h2:~/test" /> -->
+        <property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
+        <property name="jdbcUrl" value="jdbc:log4jdbc:h2:~/test" />
         <property name="username" value="sa" />
         <property name="password" value="" />
     </bean>
